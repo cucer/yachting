@@ -1,59 +1,65 @@
-import React from "react";
-import { createBrowserHistory } from "history";
+import React, { useEffect } from 'react';
+import ReactGa from 'react-ga';
+import { createBrowserHistory } from 'history';
 import {
   BrowserRouter as Router,
   Route,
   Switch,
   Redirect,
-} from "react-router-dom";
-import Wrapper from "./components/Wrapper";
-import Main from "./pages/Main/Main";
-import NotFoundPage from "./pages/Main/NotFoundPage";
-import Boats from "./pages/Boats/Boats";
-import BoatDetails from "./pages/Boats/BoatDetails";
-import About from "./pages/About/About";
-import Contact from "./pages/Contact/Contact";
-import Voyage from "./pages/Voyage/Voyage";
+} from 'react-router-dom';
+import Wrapper from './components/Wrapper';
+import Main from './pages/Main/Main';
+import NotFoundPage from './pages/Main/NotFoundPage';
+import Boats from './pages/Boats/Boats';
+import BoatDetails from './pages/Boats/BoatDetails';
+import About from './pages/About/About';
+import Contact from './pages/Contact/Contact';
+import Voyage from './pages/Voyage/Voyage';
 
 var hist = createBrowserHistory();
 
 const DashApp = () => {
+  useEffect(() => {
+    ReactGa.initialize('UA-62711254-5');
+    ReactGa.pageview('/yachting');
+  }, []);
+
   return (
     <Wrapper>
       <Router history={hist}>
         <Switch>
           <Route
-            path='/404'
+            path="/404"
             component={(props) => <NotFoundPage {...props} />}
             exact
           />
           <Route
-            path='/boats'
+            path="/boats"
             component={(props) => <Boats {...props} />}
             exact
           />
           <Route
-            path='/boats/:id'
+            path="/boats/:id"
             component={(props) => <BoatDetails {...props} />}
             exact
           />
           <Route
-            path='/voyage'
+            path="/voyage"
             component={(props) => <Voyage {...props} />}
             exact
           />
           <Route
-            path='/about'
+            path="/about"
             component={(props) => <About {...props} />}
             exact
           />
           <Route
-            path='/contact'
+            path="/contact"
             component={(props) => <Contact {...props} />}
             exact
           />
-          <Route path='/' component={(props) => <Main {...props} />} exact />
-          <Redirect to='/404' />
+          <Route path="/" component={(props) => <Main {...props} />} exact />
+          <Redirect to="/404" />
         </Switch>
       </Router>
     </Wrapper>
