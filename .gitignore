@@ -35,7 +35,7 @@ src/assets/img/boatscopy/
 /src/assets/img/boatscopy
 /src/assets/img/boatscopy/
 
-src/assets/img/boats
-src/assets/img/boats/
-/src/assets/img/boats
-/src/assets/img/boats/
+#src/assets/img/boats
+#src/assets/img/boats/
+#/src/assets/img/boats
+#/src/assets/img/boats/
