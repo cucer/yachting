@@ -44,4 +44,4 @@ Don't forget to give the project a star! Thanks again!
 
 Linkedin - [@linkedin](https://www.linkedin.com/in/cagatayucer/)
 
-Project Link: [https://github.com/cucer/dj](https://github.com/cucer/yachting)
+Project Link: [https://github.com/cucer/yachting](https://github.com/cucer/yachting)
