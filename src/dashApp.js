@@ -26,13 +26,9 @@ const DashApp = () => {
 
   return (
     <Wrapper>
-      <Router history={hist}>
+      <Router history={hist} basename={process.env.PUBLIC_URL}>
         <Switch>
-          <Route
-            path="/404"
-            component={(props) => <NotFoundPage {...props} />}
-            exact
-          />
+          <Route path="/" component={(props) => <Main {...props} />} exact />
           <Route
             path="/boats"
             component={(props) => <Boats {...props} />}
@@ -58,7 +54,11 @@ const DashApp = () => {
             component={(props) => <Contact {...props} />}
             exact
           />
-          <Route path="/" component={(props) => <Main {...props} />} exact />
+          <Route
+            path="/404"
+            component={(props) => <NotFoundPage {...props} />}
+            exact
+          />
           <Redirect to="/404" />
         </Switch>
       </Router>
